@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -18,7 +19,7 @@ import javafx.scene.text.FontWeight;
 import java.util.Timer;
 
 public class containerBox {
-//    HBox box = new HBox();
+    HBox box = new HBox();
     GridPane container = new GridPane();
     Label name;
     Label t = new Label("00:00");
@@ -29,6 +30,7 @@ public class containerBox {
     public Label getName() {
         return name;
     }
+
 
     public containerBox(String name) {
         this.name = new Label(name);
@@ -46,7 +48,6 @@ public class containerBox {
         this.close.setAlignment(Pos.CENTER);
 
         this.timeToggle = new CheckBox();
-//        this.timeToggle.setPadding(new Insets(10,10,10,10));
         this.timeToggle.setAlignment(Pos.CENTER);
 
         this.time = new Timer();
@@ -59,20 +60,18 @@ public class containerBox {
         container.add(this.timeToggle, 1,1);
         container.add(this.close, 1,2);
 
+        close.setOnAction(event ->{
+//            TextInputDialog delName = new TextInputDialog("ENTER NAME");
+//            delName.setTitle("Remove Company");
+//            delName.setHeaderText(null);
+//            delName.setGraphic(null);
+//            delName.showAndWait();
+//            String dName = delName.getResult();
 
-//        ObservableList<GridPane> a;
-//        close.setOnAction(Event -> {
-//            for (Node child: ){
-//
-//            }
-//
-//        });
-        
-//        container.setGridLinesVisible(true);
-
-//        box.getChildren().addAll(container);
-//        container.getChildren().addAll(this.name,this.timeToggle);
-//        container.setPadding(new Insets(20, 10, 10, 10));
+            for (Node child: container.getChildren()){
+                System.out.println(child);
+            }
+        });
     }
 
 }
